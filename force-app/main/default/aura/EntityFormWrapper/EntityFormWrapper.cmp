@@ -1,0 +1,7 @@
+<aura:component implements="lightning:actionOverride,flexipage:availableForAllPageTypes"
+                access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.openModal}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+</aura:component>
