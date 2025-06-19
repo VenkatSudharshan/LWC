@@ -6,19 +6,21 @@
                                     onerror={handleError}>
             <lightning-messages></lightning-messages>
 
-            <!-- Entity Name Field (Label: Entity Name, API: Name) -->
-    <lightning-input-field field-name="Name"></lightning-input-field>
+            <!-- Entity Name -->
+            <lightning-input-field field-name="Name"></lightning-input-field>
 
-            <!-- Lookup -->
+            <!-- Account Lookup -->
             <lightning-input-field field-name="Account__c" data-id="accountLookup" onchange={handleAccountChange}></lightning-input-field>
 
-            <!-- Read-only display -->
-            <lightning-input type="text" label="Account Type" value={accountType} ></lightning-input>
-            <lightning-input type="text" label="Ticker Symbol" value={tickerSymbol} ></lightning-input>
+            <!-- Read-only Fields -->
+            <lightning-input type="text" label="Account Type" value={accountType}></lightning-input>
+            <lightning-input type="text" label="Ticker Symbol" value={tickerSymbol}></lightning-input>
 
-            <!-- Hidden fields for submit -->
-            <!-- <lightning-input type="hidden" name="Account_Type__c" value={accountType}></lightning-input> -->
-            <!-- <lightning-input type="hidden" name="Ticker_Symbol__c" value={tickerSymbol}></lightning-input> -->
+            <!-- Case Lookup (Filtered based on Account) -->
+            <lightning-input-field field-name="Case__c" data-id="caseLookup" onchange={handleCaseChange}></lightning-input-field>
+
+            <!-- Case Priority (Read-only) -->
+            <lightning-input type="text" label="Case Priority" value={casePriority}></lightning-input>
 
             <!-- Buttons -->
             <div class="slds-m-top_medium">
