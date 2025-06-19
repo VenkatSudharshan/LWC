@@ -1,0 +1,18 @@
+<template>
+    <lightning-input 
+        label="Search Case"
+        value={searchKey}
+        onchange={handleSearchKeyChange}
+        placeholder="Enter case number..."
+    ></lightning-input>
+
+    <template if:true={filteredCases.length}>
+        <ul class="slds-box slds-m-top_x-small">
+            <template for:each={filteredCases} for:item="caseRec">
+                <li key={caseRec.Id}>
+                    <a href="javascript:void(0);" onclick={handleCaseSelect} data-id={caseRec.Id}>{caseRec.CaseNumber}</a>
+                </li>
+            </template>
+        </ul>
+    </template>
+</template>
